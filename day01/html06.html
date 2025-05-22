@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다양한 입력양식</title>
+</head>
+<body>
+    <h3>입력태그</h3>
+    <form>
+        <input type="text" name="text" value="텍스트"><br>
+        <input type="password" name="pass" value="12345"><br>
+        <input type="checkbox" name="chkyes">오렌지<br>
+        <input type="radio" name="rdogender" value="M">남성
+        <input type="radio" name="rdogender" value="W">여성<br>
+        <input type="file" name="fleimage"><br>
+        <!-- Hidden값 화면에 나타나지않고 페이지 내부에서 보관. 보안에 취약. 조심해서 사용 -->
+        <input type="hidden" name="currpass" value="123456">
+        <input type="image" src="../image/wpf0025.png" width="200"><br>
+        <!-- 잘 사용안함 image 태그를 일반적으로 사용-->
+        <input type="color" name="favcolor" value="#0000FF"><br>
+        <input type="date" name="currdate"><br>
+        <input type="email" name="myemail" value="hugo83@naver.com"><br>
+        <input type="month" name="currmonth" value="2025-08" >
+        <fieldset>
+            <legend>회원정보</legend>
+            <input type="text" name="text" value="텍스트"><br>
+            <input type="password" name="pass" value="12345"><br>
+        </fieldset>
+        <select>
+            <optgroup label="과일">
+                <option value="ORG">오렌지</option>
+                <option value="BNA">바나나</option>
+                <option value="MNG">망고</option>
+            </optgroup>
+            <optgroup label="채소">
+                <option value="CUB">오이</option>
+                <option value="CAR">당근</option>
+            </optgroup>
+            
+        </select><br>
+        <textarea cols="60" rows="5"></textarea><br>
+        <!-- 버튼종류 -->
+        <input type="submit" value="중요"><br>
+        <input type="button" value="기본"><br>
+        <input type="reset" value="초기상태로"><br>
+    </form>
+</body>
+</html>

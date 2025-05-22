@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 예제</title>
+    <!-- CSS 설정 -->
+    <style>
+        * { /* 웹페이지내 모든 요소. All의 의미 */
+            /* font-size: 10px;  */
+            margin: 0px;
+        }
+        body, p, h1, h2, h3, h4, h5, h6 {
+            /* 여러개 태그를 사용가능 */
+            color: aqua;
+        }
+        h1 {
+            color: crimson;            
+        }
+        div {
+            padding: 0px;
+        }
+        #header { /* 아이디 속성은 # */
+            background-color: antiquewhite;  
+            width: 700px;
+            margin: 0 auto; /* auto는 정중아에 위치시킴*/
+        }
+        #nav {
+            background-color: azure;
+            width: 700px;
+            margin: 0 auto;
+        }
+        #container {
+            background-color: beige;
+            width: 700px;
+            margin: 0 auto;
+        }
+        .temp { /* 클래스 속성은 . */
+            font-size: 20px;
+        }
+        #aside {
+            background-color: bisque;
+            width: 200px;
+            float: right;
+        }
+        #contents {
+            font-size: 20px;
+            background-color: burlywood;
+            width: 500px;
+            float: left;            
+        }
+        #footer {
+            background-color: blueviolet;
+            width: 700px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <!-- 로고 영역 -->
+        <h1>로고영역</h1>
+    </div>
+    <div id="nav" class="temp">
+        <!-- 네비게이션 영역 -->
+        <ul>
+            <li>메일</li>
+            <li>카페</li>
+            <li>블로그</li>
+            <li>스토어</li>
+            <li>뉴스</li>
+            <li>증권</li>
+            <li>부동산</li>
+        </ul>
+    </div>
+    <div id="container">
+        <!-- 메인 영역 -->
+        <div id="aside" class="temp">
+            <h3>aside</h3>
+        </div>
+        <div id="contents">
+            <h3>contents</h3>
+        </div>
+    </div>
+    <div id="footer">
+        <!-- 푸터 영역 -->
+        <h3>footer</h3>
+    </div>
+</body>
+
+</html>
