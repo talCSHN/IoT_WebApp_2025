@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        // window.onload = function() {}
+        $(document).ready(function () {
+            $('h1').css('color', 'red'); // 전통적 방식처럼 for문 사용필요 없음
+            $('h1').css('background-color', 'black'); // css 문장 그대로 사용
+        });
+
+        function makeGradient() {
+            let output = "";
+            for (let i = 0; i < 256; i++) {
+                output += "<div></div>";
+            }
+            // document.body.innerHTML
+            $('body').html(output);
+
+            // 모든 div 스타일 적용
+            $('div').each(function(i) {
+                $(this).css('height', '3px');
+                $(this).css('background-color', `rgb(${i}, ${i}, ${i})`);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Heading 1</h1>
+    <h1>Heading 1</h1>
+    <h1>Heading 1</h1>
+    <button onclick="makeGradient()">생성</button>
+</body>
+</html>

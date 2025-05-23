@@ -42,18 +42,31 @@
         #aside {
             background-color: bisque;
             width: 200px;
+            height: 100%;
             float: right;
         }
         #contents {
             font-size: 20px;
             background-color: burlywood;
             width: 500px;
+            height: 100%;
             float: left;            
         }
         #footer {
             background-color: blueviolet;
             width: 700px;
+            height: 100%; /* 높이의 %는 적용이 안됨 */
             margin: 0 auto;
+        }
+
+        #nav ul {
+            overflow: hidden;
+        }
+        #nav li {
+            list-style: none;
+            float: left;
+            padding-left: 10px;
+            padding-right: 10px;
         }
     </style>
 </head>

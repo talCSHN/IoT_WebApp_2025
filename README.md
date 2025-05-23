@@ -106,12 +106,120 @@
     ```
 - html 태그 속성
     - id : 웹페이지 하나당 한번만 쓸것
-    - class : 여러번 사용가능
+    - class : 여러번, 여러개 사용가능
 
 - UI기술로 많은 분야에서 사용
     - Qt, PyQt, Electron, Flutter(모바일), React Native(모바일), React.js, ...
 - [소스](./day01/html08.html)
 
 ## 2일차
+
+### 웹 표준기술 - CSS
+- HTML, CSS, JS 동일하게 "(쌍따옴표), '(홑따옴표) 동시 사용가능
+- Python은 ''를 추천, 웹은 ""를 추천
+- 스타일부터 레이아웃까지 연습
+- [소스](./day02/html04.html)
+
+### 웹 표준기술 - JavaScript
+- Java(컴파일러언어)와 아무런 관계없음
+- JavaScript(스크립트언어)
+- [소스](./day02/html05.html)
+
+#### 기본문법
+- HTML내에 script 태그 내에 작성
+- 변수 선언이 var(전역,지역), let(지역)
+- 문장 끝에 ; 생략이 가능하지만 되도록 사용할 것
+- 키워드
+
+    <img src="./image/web0001.png" width="600">
+
+- 화면메시지박스 : alert()
+- 디버깅 출력 : console.log()
+
+    ```js
+    <script>
+        // 변수 선언
+        var radius = 10;
+        var PI = 3.14159265;
+
+        // 출력
+        alert(2 * radius * PI);
+        console.log(2 * radius * PI);
+        // 개발자도구 > 소스에서 디버깅가능
+        // VisualStudio와 동일
+    </script>    
+    ```
+- 변수타입 : 숫자, 문자열, 불린, ... 
+    - null : undefined
+- 연산자 : 비교연산자, 수식연산자, 논리연산자, ...
+    - 차이점 : === (타입과 값이 완전일치)
+- 흐름제어 : if, for, while 
+- 함수 : function 함수명
+    - 익명함수 function() {}
+- 거의 대부분 C문법과 동일
+
+#### JavaScript 객체
+- [소스](./day02/html06.html)
+- JSON : 자바스크립트 객체를 표현하는 방식
+- 매우 편리하여 표준으로 지정하고 모든 IT분야에서 사용 중
+
+    ```js
+    var json_data = {
+        key1: value1,
+        key2: value2,
+        method: function() {
+            // ...
+        },
+    }
+    ```
+
+#### DOM
+- [소스](./day02/html07.html)
+- Document Object Model : HTML 문서의 구조를 JS에서 접근할 수 있는 개념
+- HTML 태그를 JS로 조작한다는 의미
+- JS에서 가장 중요한 부분 - 전통적인 JS 처리방식(구닥다리)
+- DOM에서 쓰이는 주요 함수들
+
+    ```js
+    // 1개 선택
+    document.querySelector(선택자);
+    document.getElementById(아이디);
+    // 다중 선택
+    document.querySelectorAll(선택자); // for문으로 후처리
+    document.getElementsByName(이름);
+    document.getElementsByClassName(클래스);
+
+    // 객체변수
+    var obj = document.getElementById("container");
+    obj.style.backgroundColor = 'red';
+    obj.style.color = 'blue';
+    obj.innerHTML = "변경 문자열";
+    obj.getAttribute("속성");
+    obj.setAttribute("속성", 변경할값);
+
+    window.onload = function(event) {
+        // ...
+    }
+    ```
+
+#### jQuery
+- JavaScript DOM의 복잡한 사용법을 개선하고 만든 라이브러리
+- 2006년도 개발, 2023년까지 업데이트
+- https://jquery.com/
+- CDN 방식으로 사용
+    ```html
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    ```
+- 모든 DOM 객체에 접근할때 `$(선택자|아이디|클래스)` 로 처리
+- jQuery on('이벤트', function() {}) 또는 이벤트(function () {})
+
+    <img src="./image/web0002.png" width="600">
+
+- [소스](./day02/html09.html)
+
+#### Vanilla JS
+- 순수 JS로 불리며 jQuery처럼 CDN링크가 필요없음
+- 전통적 방식보다 효율적으로 변경됨
+- 새로 개발되는 웹사이트는 Vanilla JS를 사용
 
 ## 3일차

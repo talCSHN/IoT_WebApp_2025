@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 학습</title>
+    <style>
+        
+    </style>
+    <script>
+        // 화면 로드이벤트
+        window.onload = function() {
+            /* CSS의 h1 { color: blue; } 와 완전동일 */
+            document.querySelector("h1").style.color = 'blue'; // 동적처리
+            document.querySelector("p").style.fontWeight = 'bold';  
+            var paras = document.querySelectorAll("p"); // 반복문으로 처리해야 함
+
+            for (var i = 0; i < paras.length; i++) {
+                var para = paras[i];
+                para.style.color = 'orange';
+                para.style.backgroundColor = 'brown';
+            }
+        }
+
+        function changeSentence() {
+            // alert("버튼클릭!"); // 이벤트가 발생하지는 확인하는 방법
+            // DOM
+            /*
+            CSS :
+            h1 { 
+                background-color: #FF0000;
+            }
+            JS 속성
+            backgroundColor : -를 제거하고 뒤쪽 단어를 대문자로 시작
+            */
+           document.querySelector("h1").style.backgroundColor = '#FF0000';
+           document.querySelector("h1").style.color = 'white';
+           document.querySelector("p").style.color = 'red';
+           document.querySelector("p").style.fontStyle = 'italic';
+           document.querySelector("p").innerHTML = "텍스트가 변경됩니다!!";
+           // 이것이 Interactive
+
+           /*
+           // 1개 객체를 선택
+           document.getElementById(아이디)
+           document.querySelector(선택자)           
+           // 여러개 객체 선택
+           document.getElementsByName(이름)
+           document.getElementsByClassName(클래스)
+           document.querySelectorAll(선택자) */
+        }
+    </script>
+</head>
+<body>
+    <h1>Lorem, ipsum.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <button onclick="changeSentence()">클릭</button>
+</body>
+</html>

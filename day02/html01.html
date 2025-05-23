@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 계속</title>
+    <style>
+        /* 클래스선택자 */
+        .select {
+            color: red;
+        }
+        .item {
+            color: blue;
+        }
+        .focus {
+            background-color: chocolate;
+        }
+        /* 태그선택자 중 속성선택자 */
+        input[type="text"] {
+            background-color: antiquewhite;
+        }        
+        input[type='password'] {
+            background-color: aquamarine;
+        }
+        input[type="submit"] {
+            background-color: blue;
+            color: white;
+        }
+        #section .title {
+            color: brown;
+        }
+        #section > p {
+            color: blue
+        }
+        /* 반응,상태 선택자 */
+        input:focus {
+            background-color: blueviolet;
+        }
+        input:disabled {
+            background-color: gainsboro;
+        }
+        
+        #menu {
+            overflow: hidden;
+        }
+        #menu li { 
+            list-style: none;
+            /* 
+            WPF : l, t, r, b 
+            CSS : t, r, b, l
+            */
+            float: left; padding: 10px 5px 15px 20px;
+        }
+        /* 구조선택자 */
+        #menu li:nth-child(2n) {
+            background-color: #FF0003;
+        }
+        #menu li:nth-child(2n+1) {
+            background-color: #800000;
+        }
+        #menu li:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+        #menu li:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li>애플</li>
+        <li class="item focus">바나나</li>
+        <li class="select">오렌지</li>
+        <li class="select">망고</li>
+    </ul><br>
+    <form>
+        <input type="text" value="hugo"><br>
+        <input type="password" value="12345" disabled><br>
+        <input type="submit">
+    </form>
+
+    <div id="section">
+        <h2 class="title">Lorem, ipsum.</h2>
+        <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p> -->
+    </div>
+
+    <ul id="menu">
+        <li>네이버</li>
+        <li>다음</li>
+        <li>구글</li>
+        <li>야후</li>
+        <li>트위터</li>
+    </ul>
+
+    
+</body>
+</html>

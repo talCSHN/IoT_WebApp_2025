@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 레이아웃</title>
+    <style>
+        /* 전체 중앙정렬 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0 auto; /* 제일 중요!!! */
+            width: 500px;
+        }
+
+        /* 메뉴의 수평정렬 */
+        div.container {
+            overflow: hidden;
+        }
+        div.item {
+            float: left;
+            margin: 0 5px;
+            padding: 10px;
+            border: 2px solid brown;
+        }
+        p.colored { 
+            width: 400px;
+            color: teal;
+            /* 글자 생략 ... */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        /* 절대위치 */
+        #container {
+            width: 400px; 
+            height: 300px;
+            border: 5px solid black;
+            overflow: hidden;
+            position: relative; /* 상대적위치 */
+        }
+        .circle {
+            position: absolute; /* 절대경로. container안에서의 절대경로 */
+            width: 50px; height: 50px;            
+            border-radius: 50%;
+            box-shadow: 3px 3px 5px gray;
+        }
+        #red {
+            background-color: red;
+            left: 20px; top: 20px;
+        }
+        #green {
+            background-color: green;
+            right: 20px; top: 20px;
+        }
+        #blue {
+            background-color: blue;
+            right: 20px; bottom: 20px;
+        }
+        #yellow {
+            background-color: khaki;
+            left: 20px; bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="total">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div class="container">
+            <div class="item">메뉴1</div>
+            <div class="item">메뉴2</div>
+            <div class="item">메뉴3</div>
+            <div class="item">메뉴4</div>
+            <div class="item">메뉴5</div>
+        </div>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </div>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio ipsa ducimus quod? Hic illo nemo dolore. Quas laboriosam quidem, vitae sapiente aut soluta commodi odit voluptate, sequi facere tempore repudiandae qui a, saepe provident quasi. Dolores, blanditiis odit! Saepe nihil ea corrupti voluptate facere tempora voluptatum labore deleniti, cumque sequi, earum mollitia aut. Magnam culpa ipsa deserunt assumenda dolorem voluptatum labore? Dolorem accusamus, itaque, recusandae perspiciatis odio voluptatem doloremque magnam amet maiores quasi repellendus qui nostrum? Assumenda, temporibus accusantium quos aspernatur eaque esse voluptate, sit nostrum hic sint nemo voluptatibus beatae, optio magni cupiditate. Distinctio facilis eveniet reprehenderit a debitis!</p>
+
+    <div id="container">
+        <div id="red" class="circle"></div>
+        <div id="green" class="circle"></div>
+        <div id="blue" class="circle"></div>
+        <div id="yellow" class="circle"></div>
+    </div>
+    <p class="colored">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque reiciendis tempora ipsum, incidunt illum quibusdam cum. Quia eaque distinctio adipisci!</p>
+</body>
+</html>
