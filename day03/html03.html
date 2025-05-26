@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부트스트랩 컨테이너</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <style>
+        /* 화면표시를 위한 커스터마이징(실제 사용X) */
+        .container {
+            width: 100%;
+            background-color: rgba(113, 44, 249, 0.15);
+            min-height: 10rem;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: calc(-1 * 0);            
+        }
+
+        .col, .col-1, .col-2, .col-3, .col-4, .col-5,
+        .col-6, .col-7, .col-8, .col-9, .col-10,
+        .col-11, .col-12, .col-sm-4, .col-sm-8
+         {
+            background-color: rgba(113, 44, 249, 0.15);
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            border: 1px solid rgba(113, 44, 249, 0.4);
+            /* text-align: center; */
+        }        
+    </style>
+</head>
+<body>
+    <!-- 일반적인 스타일 -->
+    <div class="container">        
+        <div class="row">
+            <div class="col">Col1</div>
+            <div class="col">Col2</div>
+            <div class="col">Col3</div>
+        </div>
+    </div>
+
+    <!-- 정렬 스타일 -->
+    <div class="container text-center">        
+        <div class="row align-items-center">
+            <div class="col align-self-start">Col1</div>
+            <div class="col align-self-center">Col2</div>
+            <div class="col align-self-end">Col3</div>
+        </div>
+    </div>
+    <!-- 거터 : 1 ~ 5수 사용 -->     
+    <div class="container text-center mt-5">
+        <div class="row gx-2">
+            <div class="col pt-5 mt-2">Col1</div>
+            <div class="col gy-5 ms-2 me-4">Col2</div>
+            <div class="col gy-5">Col3</div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS는 닫는 body 태그 바로 앞에 위치 -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
+</body>
+</html>

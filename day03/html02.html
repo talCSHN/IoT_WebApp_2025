@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부트스트랩 컨테이너</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <style>
+        .col, .col-1, .col-2, .col-3, .col-4, .col-5,
+        .col-6, .col-7, .col-8, .col-9, .col-10,
+        .col-11, .col-12, .col-sm-4, .col-sm-8
+         {
+            background-color: rgba(113, 44, 249, 0.15);
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            border: 1px solid rgba(113, 44, 249, 0.4);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Bootstrap Container -->
+        <div class="row">
+            <div class="col">컬럼1</div>
+            <div class="col">컬럼2</div>
+            <div class="col">컬럼3</div>
+            <div class="col">컬럼4</div>
+            <div class="col">컬럼5</div>
+            <div class="col">컬럼6</div>
+            <div class="col">컬럼7</div>
+            <div class="col">컬럼8</div>
+            <div class="col">컬럼9</div>
+            <div class="col">컬럼10</div>
+            <div class="col">컬럼11</div>
+            <div class="col">컬럼12</div>
+        </div>
+        <div class="row">
+            <div class="col">컬럼1</div>
+            <div class="col">컬럼2</div>
+            <div class="col">컬럼3</div>
+        </div>
+        <div class="row">
+            <div class="col">컬럼1</div>
+            <div class="col">컬럼2</div>
+        </div>
+        <!-- 그리드 배율 조정, 전체합이 12를 넘으면 안됨 -->
+        <div class="row">
+            <div class="col-2">컬럼1</div>
+            <div class="col-8">컬럼2</div>
+            <div class="col-2">컬럼3</div>
+        </div>
+        <div class="row">
+            <div class="col-8">컬럼1</div>
+            <div class="col-2">컬럼2</div>
+        </div>
+        <div class="row">
+            <div class="col-4">col-4</div>
+            <div class="col-8">col-8</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">col-sm-4</div>
+            <div class="col-sm-8">col-sm-8</div>
+        </div>
+        <!-- 그리드 내 추가 그리드 -->
+         <div class="row">
+            <div class="col-sm-4">col-sm-4</div>
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-5">Nest Col1</div>
+                    <div class="col-5">Nest Col2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS는 닫는 body 태그 바로 앞에 위치 -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
+</body>
+</html>

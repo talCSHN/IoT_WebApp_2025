@@ -223,3 +223,126 @@
 - 새로 개발되는 웹사이트는 Vanilla JS를 사용
 
 ## 3일차
+
+### 반응형웹
+- UTF-8 적용 전 : 한국어웹, 영어웹, 일본어웹 등 웹페이지를 언어별로 개발필요
+- 반응형 웹 이전 : PC용, 모바일용, 태블릿용 등 웹사이트 다중 개발필요
+- 문제 : 하나의 웹페이지가 수정되면 다른 웹페이지들도 다 수정 -> 시간, 돈의 Loss
+- 하나의 웹페이지로 기기, 언어문제를 전부 해결하고자 나온 기술중 화면쪽 -> 반응협웹
+- `Responsive Web` : 웹, 모바일 등의 기기와 해상도에 상관없이 하나의 웹으로 모두 표현할 수 있는 웹화면 개발 기술
+
+- HTML5에 반응형 웹 메타태그만 사용
+
+    ```html
+    <!DOCTYPE html>
+    ...
+    <head>
+    <!-- 반응형웹 중요태그 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    ```
+
+- 부트스트랩으로 학습
+- https://inpa.tistory.com/category/Style%20Sheet/Bootstrap5?page=2 
+
+### 부트스트랩
+- 현재 전세계적으로 가장 많이 사용되는 오픈소스 CSS, JS 프레임워크
+- 트위터 블루프린트로 시작. 트위터 웹사이트를 꾸미기위해서 개발시작
+- 현재 5.3 버전
+- 이전에는 jQuery 사용했으나 현재는 Pure JS로 전향되었음
+- [공식사이트](https://getbootstrap.com/)
+
+#### 부트스트랩 시작
+- [시작](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- GetStarted에 나와있는 CSS와 JS를 웹페이지에 붙여넣기
+
+    <img src="./image/web0003.png" width="600">
+
+#### 부트스트랩 학습
+- 버튼 사용법
+
+    <img src="./image/web0004.png" width="600">
+
+- 미디어쿼리 : 웹페이지 사이즈에 따른 사용법을 위해 필요
+    - Bootstrap에서 sm, md, lg 등의 infix를 사용할 경우가 많음  
+    - X-Small : None(사용할 이름없음) (< 576px)
+    - Small : sm (>= 576px)
+    - Medium : md (>= 768px)
+    - Large : lg (>= 992px)
+    - Extra large : xl (>= 1200px)
+    - Extra extra large : xxl (>= 1400px)
+
+- 컨테이너 : 기본 레이아웃에서 가장 중요! 그리드 스타일이라고 부름
+    - container - 일반적인 넓이사용. 양쪽에 여백이 존재
+    - container-fluid - 여백없이 웹페이지를 꽉채우는 스타일
+    - container > row > col 형식으로 사용
+    - 각 grid는 최대 12개까지 사용
+
+- 정렬 클래스
+    - * : start, center, end
+    - text-*
+    - align-items-*
+    - align-self-*
+    - justify-content-*
+
+- 거터 : 갭(안쪽여백), padding과 동일
+    - g, gx, gy, g-number, gx-number, gy-number
+    - number : 1부터 5까지 사용가능
+    - g : gx + gy
+    - gx : 왼쪽, 오른쪽 안여백
+    - gy : 위쪽, 아래쪽 안여백
+
+- 여백을 위한 클래스
+    - -number포함 : 1~5까지
+    - p, ps, pt, pb, pe, px, py : padding
+    - m, ms(left), mt, mb, me(right), mx, my : margin
+    - start, top, end, bottom : 배율로 조정
+
+- 컴포넌트 학습
+    - Accordion
+    - Alert : Button 클래스와 동일 primary ~ light(link는 없음)
+    - Breadcrumb : 메뉴 경로
+    - Navbar, Navs & tabs : 메뉴 내비게이션바
+    - Button, Close button, Button group : 버튼관련 컴포넌트
+    - Card, Placeholders, Modal, `Popovers`, Toasts, `Tooltips` : 화면 영역 컴포넌트
+    - Pagination : 게시판 페이지 컴포넌트
+    - Progress, Spinners : 프로그레스바, 대기용 컴포넌트
+    - Carousel : 이미지 갤러리
+
+    <img src="./image/web0005.png" width="600">
+
+- 아이콘
+    - [사이트](https://icons.getbootstrap.com/)
+    - 부트스트랩이 지원해주는 아이콘
+    - Python PyQt, leaflet.js(Folium) 등에도 사용가능
+    - FontAwesome, XEIcon, Google Icon Fonts
+
+#### 이미지팁
+- 화면 UI 설계시 이미지 찾는 시간을 절약하기 위해 만든 사이트
+- placehold image Site
+    - [플레이스홀드](https://placehold.co/)
+    - [로렙플릭커](https://loremflickr.com/)
+    - [로렘픽섬](https://picsum.photos/)(추천)
+
+#### 부트스트랩 템플릿 사이트
+- 유료 템플릿
+    - https://wrapbootstrap.com/templates 
+    - https://themeforest.net/search/sns%20bootstrap : 필요한 소스코드도 구매가능
+    - https://themewagon.com/theme-price/pro/
+- 무료 템플릿
+    - https://startbootstrap.com/ : 무표 템플릿 중 최고
+    - https://bootswatch.com/
+    - https://bootstrapmade.com/ : 출처를 표기해야 함
+    - https://themewagon.com/theme-price/free/
+    - https://graygrids.com/templates/tag/bootstrap-5?type=free
+
+### 프론트엔드 활용
+- HTML5 + CSS3 + JS + BootStrap 응용예제
+    - Bootstrap Image Gallery
+
+    
+## 4일차
+
+### 프론트엔드 활용
+- HTML5 + CC3 + JS 응용예제
+
+### ASP.NET Core 
