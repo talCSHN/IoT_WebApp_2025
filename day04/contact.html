@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StartBootstrap OpenSource Theme - Modern Business clonning">
+    <meta name="author" content="StartBootstrap">
+    <title>Modern Business</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-icons.min.css" />
+    <!-- Custom CSS. 부가적이 스타일 적용은 여기에 -->
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body class="d-flex flex-column h-100">
+    <div id="main" class="flex-shrink-0">
+        <!-- Navigation -->
+        <div id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand text-uppercase" href="./index.html">
+                    <i class="bi bi-building-fill"></i>
+                    Modern Business</a>
+                <!-- 웹페이지 넓이가 줄어들면 나타나는 햄버거메뉴 -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContents"
+                    aria-controls="navbarContents" aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContents">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link text-uppercase" href="./index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-uppercase" href="./about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-uppercase" href="./board.html">Board</a></li>
+                        <li class="nav-item"><a class="nav-link text-uppercase" href="./contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page content -->
+        <div id="section" class="py-5">
+            <div class="container px-5">
+                <!-- Contact Form -->
+                <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+                    <!-- Contact Title -->
+                    <div class="text-center mb-5">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <h1 class="fw-bolder">Get in touch</h1>
+                        <p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>
+                    </div>
+                    <!-- Contact Area -->
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <form id="contactForm" class="needs-validation" validate>
+                                <!-- Name입력 -->
+                                <div class="form-floating mb-3">
+                                    <input id="name" type="text" class="form-control" placeholder="Enter your name..." required>
+                                    <label for="name">Enter your name...</label>
+                                    <div class="invalid-feedback">A name is required.</div>
+                                </div>
+                                <!-- Email입력-->
+                                <div class="form-floating mb-3">
+                                    <input id="email" type="email" class="form-control" placeholder="name@example.com" required>
+                                    <label for="email">Enter your email address</label>
+                                </div>
+                                <!-- 전화번호 -->
+                                <div class="form-floating mb-3">
+                                    <input id="phone" type="tel" class="form-control" placeholder="(123) 46-7890" required>
+                                    <label for="phone">Enter your phone number</label>
+                                </div>
+
+                                <!-- 메시지 영역-->
+                                <div class="form-floating mb-3">
+                                    <textarea id="message" type="text" class="form-control" style="height: 10rem;" required></textarea>
+                                    <label for="message">Enter your message</label>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" id="btnSumbit" type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact cards -->
+                <div class="row gx-5 row-cols-2 row-cols-lg-4 py-5">
+                    <div class="col">
+                        <div class="feature bg-success bg-gradient text-white rounded-3 mb-3">
+                            <i class="bi bi-chat-dots"></i>
+                        </div>
+                        <div class="h5 mb-3">Chat with us</div>
+                        <p class="text-muted mb-0">Chat live with one of our support specialists.</p>
+                    </div>
+                    <div class="col">
+                        <div class="feature bg-success bg-gradient text-white rounded-3 mb-3">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <div class="h5 mb-3">Ast the community</div>
+                        <p class="text-muted mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing</p>
+                    </div>
+                    <div class="col">
+                        <div class="feature bg-success bg-gradient text-white rounded-3 mb-3">
+                            <i class="bi bi-question-circle"></i>
+                        </div>
+                        <div class="h5 mb-3">Support center</div>
+                        <p class="text-muted mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                    </div>
+                    <div class="col">
+                        <div class="feature bg-success bg-gradient text-white rounded-3 mb-3">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <div class="h5 mb-3">Call us</div>
+                        <p class="text-muted mb-0">Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer" class="bg-dark py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">Copyright &copy; My Website 2025</div>
+                </div>
+                <div class="col-auto">
+                    <a class="link-light small" href="#!">Privacy</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Terms</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS는 항상 여기. script태그는 여는태그,닫는태그가 모두 있어야 -->
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- 부가적인 스크립트가 필요하면 여기에 -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
