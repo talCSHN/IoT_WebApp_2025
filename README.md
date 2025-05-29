@@ -73,6 +73,7 @@
 - img, audio, video : 이미지, 오디오, 비디오 
 - [소스](./day01/html05.html), [소스](./day01/html06.html)
 - form, input, button, select, textarea, label : 입력양식, 텍스트박스, 버튼, 콤보박스, 여러줄텍스트박스, 라벨
+    - form action에 `get`과 `post`. (dialog는 무시)
 - progress : 진행률
 - div, span : 공간분할
 
@@ -551,4 +552,78 @@
 ### ASP.NET Core
 
 #### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝(계속)
-1. to be continued...
+1. Properties> launchSettgins.json
+    - hotReloadEnabled 설정키 추가
+2. _Layout.cshtml 작업 계속
+    - head, nav, footer, script영역 공통부분 
+    - main.js 소스를 site.js로 복사/붙여넣기
+    - 원본 head의 google font 태그 그대로 사용
+    - ASP.NET Core에서 생성한 <link rel="stylesheet" href="~/MyPortfolioWebApp.styles.css" asp-append-version="true" /> 주석처리
+3. 원본 이미지 등 정적리소스를 변경시 반영안되는 경우
+    - 웹브라우저에 캐시가 남아있기 때문
+    - 웹브라우저 설정 > 개인정보 보호 및 보안 > 인터넷 사용기록 및 삭제 > 전체삭제
+    - 웹브라우저가 없는 리소스는 재다운로드
+4. HomeController에 About 메서드 생성
+    - 뷰 추가
+    - ASP.NET Core 링크 asp-controller, asp-action 속성을 사용해야
+5. About.cshtml부터 Contact.cshtml까지
+    - CSS 부터 적용
+   
+6. DB연동
+    - NuGet 패키지
+        - Bogus (Python Faker 라이브러리)
+        - `Microsoft.EntityFrameworkCore` 8.0.x
+        - `Microsoft.EntityFrameworkCore.Tools` 8.0.x
+        - `Pomelo.EntityFrameworkCore.MySql` 8.0.3
+        - EntityFrameworkCore는 전부 Version Major 숫자가 일치해야 함(현재 8버전)
+    - EntityFramework Code First 방식
+        - DB를 잘 몰라도 웹개발 가능토록 만든 기술
+
+    - Model > News 클래스 생성
+    - appsettings.json, DB연결문자열 추가
+    - Model > ApplicationDbContext 클래스 생성
+    - Progam.cs에서 초기화 설정에 DB연결을 추가
+
+    - 도구>NuGet패키지 관리자> 패키지 관리자 콘솔로 진입. 아래의 1, 2번 명령어를 순차적 실행
+        ```shell
+        PM1> add-migration AddNewsToDatabase
+        Build started...
+        Build succeeded.
+        To undo this action, use Remove-Migration.
+        PM2> update-database
+        Build started...
+        ...
+        Build succeeded.
+        ...
+        Done.
+        PM>
+        ```
+    - MySQL Workbench 해당 스키마(DB)에 News 테이블 생성 확인, 더미데이터 입력
+    - NewsController 클래스 생성
+    - Entity Framework를 사용하여 뷰가 포함된 MVC 컨트롤러 선택
+
+    <img src="./image/web0014.png" width="600">
+
+7. Controller 설명
+    - CRUD 중
+        - SELECT는 GET메서드만 존재
+        - 데이터가 처리되면 INSERT, UPDATE, DELETE 기능에는 GET, POST메서드 둘 다 필요
+        - form 태그의 `asp-action`이 POST 메서드
+
+8. 개발콘솔에서 CRUD 로그 확인
+
+    <img src="./image/web0015.png" width="600">
+
+9. 작업화면
+
+    https://github.com/user-attachments/assets/33b49f9b-946b-44ae-9ad2-ae6521bf1e7d
+    
+
+## 6일차
+
+### ASP.NET Core
+
+#### ASP.NET Core MVC - Kelly Portfolio 디자인 클로닝(계속)
+- 뉴스, 게시판 완료
+- 한글화
+- 마무리
