@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using DBFirstWebApp.Models;
+using DbFirstWebApp.Models;
 
-namespace DBFirstWebApp.Controllers
+namespace DbFirstWebApp.Controllers
 {
     public class DivController : Controller
     {
@@ -18,13 +18,13 @@ namespace DBFirstWebApp.Controllers
             _context = context;
         }
 
-        // GET: Divtbl
+        // GET: Div
         public async Task<IActionResult> Index()
         {
             return View(await _context.Divtbls.ToListAsync());
         }
 
-        // GET: Divtbl/Details/5
+        // GET: Div/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -42,13 +42,13 @@ namespace DBFirstWebApp.Controllers
             return View(divtbl);
         }
 
-        // GET: Divtbl/Create
+        // GET: Div/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Divtbl/Create
+        // POST: Div/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -64,7 +64,7 @@ namespace DBFirstWebApp.Controllers
             return View(divtbl);
         }
 
-        // GET: Divtbl/Edit/5
+        // GET: Div/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -80,7 +80,7 @@ namespace DBFirstWebApp.Controllers
             return View(divtbl);
         }
 
-        // POST: Divtbl/Edit/5
+        // POST: Div/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -115,7 +115,7 @@ namespace DBFirstWebApp.Controllers
             return View(divtbl);
         }
 
-        // GET: Divtbl/Delete/5
+        // GET: Div/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -133,7 +133,7 @@ namespace DBFirstWebApp.Controllers
             return View(divtbl);
         }
 
-        // POST: Divtbl/Delete/5
+        // POST: Div/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)

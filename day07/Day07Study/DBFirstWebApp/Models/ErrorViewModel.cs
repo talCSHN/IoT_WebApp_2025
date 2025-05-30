@@ -1,4 +1,4 @@
-namespace DBFirstWebApp.Models
+namespace DbFirstWebApp.Models
 {
     public class ErrorViewModel
     {

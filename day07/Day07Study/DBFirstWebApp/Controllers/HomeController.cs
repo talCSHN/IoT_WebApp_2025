@@ -1,8 +1,8 @@
-using DBFirstWebApp.Models;
+using DbFirstWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace DBFirstWebApp.Controllers
+namespace DbFirstWebApp.Controllers
 {
     public class HomeController : Controller
     {

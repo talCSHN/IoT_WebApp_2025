@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DBFirstWebApp.Models.Divtbl>
+﻿@model IEnumerable<DbFirstWebApp.Models.Divtbl>
 
 @{
     ViewData["Title"] = "Index";
@@ -24,9 +24,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Division)
-            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Division)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Names)
             </td>

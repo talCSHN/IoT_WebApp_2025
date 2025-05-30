@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DBFirstWebApp.Models;
+namespace DbFirstWebApp.Models;
 
 public partial class Membertbl
 {

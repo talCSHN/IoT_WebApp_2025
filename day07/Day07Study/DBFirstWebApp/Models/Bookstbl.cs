@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DBFirstWebApp.Models;
+namespace DbFirstWebApp.Models;
 
 public partial class Bookstbl
 {
@@ -19,8 +19,9 @@ public partial class Bookstbl
 
     public decimal? Price { get; set; }
 
-    // 부모
+    // 부모로 Divtbl을 가지고 있다
     public virtual Divtbl DivisionNavigation { get; set; } = null!;
-    // 자식
+
+    // 자식으로 RentalTbl을 가지고 있다
     public virtual ICollection<Rentaltbl> Rentaltbls { get; set; } = new List<Rentaltbl>();
 }

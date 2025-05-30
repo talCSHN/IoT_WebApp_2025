@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using DBFirstWebApp.Models;
+using DbFirstWebApp.Models;
 
-namespace DBFirstWebApp.Controllers
+namespace DbFirstWebApp.Controllers
 {
     public class MemberController : Controller
     {
