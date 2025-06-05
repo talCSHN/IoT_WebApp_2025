@@ -831,20 +831,63 @@
         <img src="./image/web0024.png" width="600">
 
 3. 한글화
+    - 각 페이지 한글로 입력변경
+
 4. 정적페이지 DB연동
     - About, Skill 모델 생성
     - NuGet 패키지 관리자 콘솔
         - Add-Migration
         - Update-Database
-    - HomeController의 About() 메서드에서 DB 연동
-    - About.cshtml에 데이터 변수 사용
+    - HomeController의 About() 메서드에서 DB연동
+    - About.cshtml에 데이터변수 사용
 
 5. 회원가입/로그인
     - ASP.NET Core Identity API
     - 사용자, 암호, 프로필데이터, 역할, 메일확인... 작업과 Google OAuth 연동 가능
+    - NuGet 패키지 - Microsoft.AspNetCore.Identity.EntityFrameworkCore 설치
+    - Models.ApplicationDbContext 에서 기반클래스를 IdentityDbContext로 변경
+    - Program.cs 내용 추가
 
-6. 게시판 준비
-7. 마무리
+        ```cs
+        // ASP.NET Core Identity 설정!
+        builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
+
+        var app = builder.Build();
+
+        // ...
+
+        app.UseStaticFiles();
+
+        app.UseRouting();
+        app.UseAuthentication();  // ASP.NET Core Identity 계정!
+        app.UseAuthorization();   // 권한
+        ```
+
+    - NuGet 패키지 관리자 콘솔
+
+        ```bash
+        PM> Add-Migration InitialIdentity
+        Build started...
+        Build succeed.
+        Done.
+        PM> Update-database
+        // DB생성
+        Done.
+        ```
+
+    - MySQL Workbech에서 추가된 7개 AspNet* 테이블 확인
+
+        <img src="./image/web0025.png" width="450">
+
+## 10일차
+
+### ASP.NET Core 실습
+
+#### ASP.NET Core MVC - Kelly Portfolio 클로닝 끝
+1. 게시판 준비
+2. 이후 작업
 
 ### ASP.NET Core API서버
 
