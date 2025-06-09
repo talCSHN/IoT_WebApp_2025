@@ -83,7 +83,7 @@
                     var skills = Model.Skill.ToList();
                 }
 
-                @for (var i = 0; i <= colNum; i++)
+                @for (var i = 0; i < colNum; i++)
                 {
                     <div class="progress">
                         <span class="skill"><span>@skills[i].Language</span> <i class="val">@skills[i].Level</i></span>
