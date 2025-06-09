@@ -883,11 +883,54 @@
 
 ## 10일차
 
+### Visual Studio 개발 Tip
+- 이전 솔루션을 복사하고 나서 MSBuild에서 오류가 발생할 가능성이 있음
+- 이를 대비해서 프로젝트 내 bin, obj 폴더를 삭제 후
+- VS를 다시 실행하면 bin, obj 폴더를 재생성
+
 ### ASP.NET Core 실습
 
 #### ASP.NET Core MVC - Kelly Portfolio 클로닝 끝
-1. 게시판 준비
-2. 이후 작업
+1. 회원가입/로그인 계속
+    - 자동생성 테이블
+        - AspNetRoleClaims : 역할 내 모든 사용자에게 부여되는 클레임(권리 - 편집가능, 작성가능, ...)
+        - AspNetRoles : 역할저장 테이블(관리자, 사용자, 뷰어...)
+        - AspNetUserClaims : 사용자가 소유한 클레임
+        - AspNetUserLogins : 사용자를 로그인에 연결
+        - AspNetUserRoles : 사용자테이블, 역할테일을 연결하는 Join entity
+        - `AspNetUsers` : 사용자정보 테이블
+        - AspNetUserTokens : 사용자 인증토큰 테이블
+    - Models.RegisterModel 클래스 생성
+    - AccountController 클래스 생성
+        - Register(), Login() Get/Post 메서드 추가
+    - Regiser 뷰 추가
+    - Login 뷰 추가
+    - 각 기능별 버튼, 링크 추가
+
+2. 회원가입 정보 확장
+    - Models.CustomUser 클래스 생성. IdentityUser를 상속. City, Mobile, Hobby 속성 추가
+    - Program.cs 에서 IdentityUser -> CustomUser로 변경
+    - AccountController 에서 IdentityUser -> CustomUser로 변경
+    - _Layout.cshtml, News.Index.cshtml, News.Detail.cshtml에 IdentityUser -> CustomUser로 변경
+    - ApplicationDbContext.cs에서 IdentityUser -> CustomUser로 변경
+    - NuGet 패키지 관리자 콘솔에서
+        - Add-Migration (이름) 실행, Update-Database 실행
+    - Account.Register.cshtml 입력양식 추가
+    - AccountController.cs Register() Post 메서드 수정
+    - Program.cs에서 패스워드 정책을 간단하게 변경
+
+3. 게시판 준비
+    - MySql Workbench에서 Board 테이블 생성
+    - NuGet 패키지 관리자 콘솔에서 DB스캐폴드
+        - Scaffold-DbContext "Server=localhost;..." Pomelo.EntityFrameworkCore.MySql -OutputDir BackupModels
+    - BackupModels에서 필요한 모델클래스를 Models 이전, 수정
+    - ApplicationDbContext에 `DbSet<Board>` 추가
+    - Controller에 BoardController 클래스 스캐폴딩 생성
+
+4. 이후 작업
+    - HomeController Contact() Post메서드 신규 추가
+    - 메일관련 작업 - Pendding
+
 
 ### ASP.NET Core API서버
 
