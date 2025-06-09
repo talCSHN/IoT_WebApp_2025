@@ -8,6 +8,7 @@ public partial class Board
 {
     [Key]
     public int Id { get; set; }
+    public string? VelogUrl { get; set; }
 
     [Required]
     public string Email { get; set; }

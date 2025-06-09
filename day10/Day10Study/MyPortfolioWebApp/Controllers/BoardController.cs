@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -17,12 +18,60 @@ namespace MyPortfolioWebApp.Controllers
         {
             _context = context;
         }
-
         // GET: Board
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Board.ToListAsync());
+            // DB 게시글 가져오기
+            var dbBoards = await _context.Board.ToListAsync();
+
+            // 벨로그 RSS 불러오기
+            string velogUserId = "wwh11111";
+            string rssUrl = $"https://v2.velog.io/rss/{velogUserId}";
+
+            List<Board> velogBoards = new List<Board>();
+
+            try
+            {
+                using var httpClient = new HttpClient();
+                var rssContent = await httpClient.GetStringAsync(rssUrl);
+                var doc = XDocument.Parse(rssContent);
+
+                var items = doc.Descendants("item");
+
+                foreach (var item in items)
+                {
+                    var board = new Board
+                    {
+                        Id = 0,
+                        VelogUrl = item.Element("link")?.Value,
+                        Title = item.Element("title")?.Value,
+                        Contents = item.Element("description")?.Value,
+                        PostDate = DateTime.TryParse(item.Element("pubDate")?.Value, out var dt) ? dt : (DateTime?)null,
+                        Writer = "박관호",
+                        Email = "yujakinasakoon@gmail.com",
+                        ReadCount = 0
+                    };
+
+                    velogBoards.Add(board);
+                }
+            }
+            catch
+            {
+            }
+
+            // DB 글 + 벨로그 글 합치기
+            var combined = dbBoards.Concat(velogBoards)
+                .OrderByDescending(b => b.PostDate)
+                .ToList();
+
+            Console.WriteLine(combined.Count + "+++++++++");
+            return View(combined);
         }
+
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await _context.Board.ToListAsync());
+        //}
 
         // GET: Board/Details/5
         public async Task<IActionResult> Details(int? id)

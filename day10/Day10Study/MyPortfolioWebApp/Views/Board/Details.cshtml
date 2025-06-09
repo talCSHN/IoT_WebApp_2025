@@ -1,54 +1,36 @@
 ﻿@model MyPortfolioWebApp.Models.Board
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "게시글 상세";
 }
 
-<h1>Details</h1>
+<div class="container mt-5" style="max-width:600px;">
+    <h1 class="mb-3 text-center">게시글 상세</h1>
 
-<div>
-    <h4>Board</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Writer)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Writer)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Contents)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Contents)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PostDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PostDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ReadCount)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ReadCount)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div class="card p-4 mb-4 shadow-sm">
+        <dl class="row mb-0">
+            <dt class="col-sm-3 fw-semibold">Email</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
+
+            <dt class="col-sm-3 fw-semibold">Writer</dt>
+            <dd class="col-sm-9">@Model.Writer</dd>
+
+            <dt class="col-sm-3 fw-semibold">Title</dt>
+            <dd class="col-sm-9">@Model.Title</dd>
+
+            <dt class="col-sm-3 fw-semibold align-top">Contents</dt>
+            <dd class="col-sm-9">@Model.Contents</dd>
+
+            <dt class="col-sm-3 fw-semibold">Post Date</dt>
+            <dd class="col-sm-9">@Model.PostDate?.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-3 fw-semibold">Read Count</dt>
+            <dd class="col-sm-9">@Model.ReadCount</dd>
+        </dl>
+    </div>
+
+    <div class="d-flex justify-content-end gap-2">
+        <a asp-action="Index" class="btn btn-outline-secondary px-4">← 목록으로</a>
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary px-4">수정</a>
+    </div>
 </div>
