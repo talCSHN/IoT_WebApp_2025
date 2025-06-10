@@ -1,2 +1,2 @@
 *.html linguist-language=Ignore
-*.css linguist-language=Ignore
+*.css linguist-vendored
