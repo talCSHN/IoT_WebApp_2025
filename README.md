@@ -1183,16 +1183,94 @@
     2. AWS MySQL Workbench에서 FTP로 전달한 sql을 Server > Data Import로 복구
     3. 저장프로시저는 쿼리 복사해서 재실행
 
-
-
-
-
-### 부가적인 기능
-- OAuth (구글로그인)
-- 파일업로드
-
-### MyPortfolio 완성
-
 ## 15일차
 
-### 전체 마무리
+### AWS 클라우드 업로드
+
+#### 14일차 확인한 문제
+- FileZilla FTP와 연동 VS에서 FTP로 게시할때 업로드 문제
+- 파일자체는 업로드 성공, 실패메시지가 리턴
+- 다른 방법
+    - IIS + WebDeploy : 현재 문제발생
+    - IIS FTP 사용 : 해결방법
+
+#### AWS 라이트세일 웹서버 올리기(계속)
+1. 인스턴스 진입
+    1. 서비스 오픈 > FileZilla-Server 중지(Startup type Manual)
+    2. Server Manager 실행 -> Add roles and features
+        - Role-based or feature-based installation -> 자기 서버 선택 Next
+        - 아래 기능 설치
+            - WebServer IIS 선택 후 Add Features
+            - Health And Diagnostics -> Logging Tool, Request Monitor 추가 선택
+            - Application Deployment -> ASP.NET 4.8, ISAPI Extenstions, ISAPI Filters 추가 선택
+            - FTP Server 아래 전부 선택
+    3. asp.net core hosting bundle 8.0 웹브라우저 검색
+
+        <img src="./image/web0037.png" width="500">
+
+        - https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+        - aspnetcore-runtime-8.0.17-win-x64.exe 그냥 설치
+    4. dotnet-hosting-8.0.17-win.exe 설치
+        - 콘솔(파워쉘)에서 iisreset 실행
+
+        <img src="./image/web0038.png" width="600">
+
+    5. IIS 서비스 
+        - Modules -> `AspNetCoreModuleV2`가 있는지 확인
+        - Add FtpSite...
+            - 이름, 물리적 경로 선택
+            - IP/All Unassigned, Port/21, SSL/Allow SSL 선택
+            - Authentication : Basic, 사용자 Administrator, 암호는 인스턴스 암호사용
+            - Authorization : permission, READ/WRITE 둘다 체크
+    6. Application Pool 생성
+        - ASPNETCore Pool 생성
+
+        <img src="./image/web0039.png">
+        
+    7. OS방화벽, AWS 인스턴스 방화벽
+        - OS방화벽에는 21, 1024-65535 전부 오픈
+        - AWS 인스턴스 네트워크도 동일하게 오픈
+
+    8. IIS 서비스 
+        - WebSite 생성 > Add Website
+        - SiteName 옆 Applicaiton Pool을 Select버튼, ASPNetCore를 선택!
+
+2. 90일 이후
+    - AWS 라이트세일 내
+    - 비용발생, 반드시 인스턴스 삭제할 것    
+
+### 부가적인 기능
+- 파일업로드
+- OAuth (구글로그인)
+
+#### 웹사이트 파일업로드 기능 구현
+1. Model.News
+    - UploadFile 속성 추가
+2. MySQL Workbench
+    - News 테이블 UploadFile 컬럼 추가
+    - 운영중인 테이블에 새 컬럼을 추가하면 `Not Null로 설정불가`!
+3. New_PagingBoard 저장프로시저 오류 수정
+    - UploadFile 컬럼 추가되어 생기는 오류
+4. Views/News/Create.cshtml
+    - 입력양식에 파일입력 추가
+    - form 태그에 파일업로드 enctype="multipart/form-data" 속성 추가
+5. wwwroot/upload 폴더 추가
+6. Controller/NewsController.cs
+    - Create() Post메서드에 파일 파라미터 추가
+    - 파일 저장 로직 추가
+7. Views/News/Details.cshtml, Delete.cshtml 동일
+    - 파일 다운로드 영역 추가
+8. Views/News/Edit.cshtml 
+    - 파일업로드 영역 추가(Create.cshtml과 유사)
+9. Controller/NewsController.cs 
+    - Edit() Post메서드에 파일 파라미터 추가
+    - 파일저장 로직 처리(Create() 메서드 로직 복사)
+10. VS IIS Express 사용시
+    - 최대 30MB 제약 걸려있음 - ERR_CONNECTION_RESET 발생
+    - 업로드 크기를 제한을 두더라도 최대사이즈는 설정필요
+11. Program.cs 
+    - 최대 업로드 크기 설정
+
+    <img src="./image/web0040.png" width="600">
+
+### 개인포트폴리오 게시판 완료

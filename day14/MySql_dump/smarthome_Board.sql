@@ -30,9 +30,8 @@ CREATE TABLE `Board` (
   `Contents` longtext NOT NULL,
   `PostDate` datetime DEFAULT NULL,
   `ReadCount` int DEFAULT NULL,
-  `VelogUrl` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +40,7 @@ CREATE TABLE `Board` (
 
 LOCK TABLES `Board` WRITE;
 /*!40000 ALTER TABLE `Board` DISABLE KEYS */;
-INSERT INTO `Board` VALUES (2,'yujakinasakoon@gmail.com','박관호','호날두, 그의 한계는 어디까지인가','85년생 41살 호날두, 유럽네이션스컵 우승','2025-06-09 00:00:00',1,NULL);
+INSERT INTO `Board` VALUES (1,'personar@nate.com','작성자','게시판입니다. 첫번째 글입니다','내용은 없습니다','2025-06-05 16:10:10',0);
 /*!40000 ALTER TABLE `Board` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-12 16:06:15
+-- Dump completed on 2025-06-12 16:05:38

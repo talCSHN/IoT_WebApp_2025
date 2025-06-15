@@ -37,7 +37,7 @@ CREATE TABLE `Book` (
 
 LOCK TABLES `Book` WRITE;
 /*!40000 ALTER TABLE `Book` DISABLE KEYS */;
-INSERT INTO `Book` VALUES (1,'호날두의 시간은 거꾸로 간다','Cristiano Ronaldo','2025-06-09'),(2,'호날두의 모든 것','리오넬 메시','2025-06-09');
+INSERT INTO `Book` VALUES (1,'잔혹한 어머니의 날 1','넬레 노이하우스','2019-10-07'),(2,'잔혹한 어머니의 날 2','넬레 노이하우스','2017-10-09');
 /*!40000 ALTER TABLE `Book` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-12 16:06:18
+-- Dump completed on 2025-06-12 16:05:37

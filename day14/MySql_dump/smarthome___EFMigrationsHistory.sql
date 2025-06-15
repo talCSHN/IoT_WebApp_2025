@@ -35,7 +35,7 @@ CREATE TABLE `__EFMigrationsHistory` (
 
 LOCK TABLES `__EFMigrationsHistory` WRITE;
 /*!40000 ALTER TABLE `__EFMigrationsHistory` DISABLE KEYS */;
-INSERT INTO `__EFMigrationsHistory` VALUES ('20250529061834_AddNewsToDatabase','8.0.16'),('20250604055438_About_Skill_database','8.0.16'),('20250604075930_InitialIdentity','8.0.16'),('20250605060449_AddPropertiesOnIdentityUsers','8.0.16'),('20250610011052_AddTodoItemsToDB','8.0.16');
+INSERT INTO `__EFMigrationsHistory` VALUES ('20250529061834_AddNewsToDatabase','8.0.16'),('20250604055431_About_Skill_database','8.0.16'),('20250604075922_InitialIdentity','8.0.16'),('20250605004642_InitIdentityAgain','8.0.16'),('20250605004733_InitIdentityAgain','8.0.16'),('20250605010339_InitIdentityAgain2','8.0.16'),('20250605050145_AddPropertiesOnIdentityUser','8.0.16'),('20250610011118_AddTodoItemsToDB','8.0.16');
 /*!40000 ALTER TABLE `__EFMigrationsHistory` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-12 16:06:17
+-- Dump completed on 2025-06-12 16:05:37
